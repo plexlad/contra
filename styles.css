@@ -1,7 +1,3 @@
-:root {
-    --example-color-variable: red;
-}
-
 @font-face {
     font-family: Mechanical;
     src: url("./fonts/MechanicalBold-oOmA.otf");
