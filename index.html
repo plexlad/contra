@@ -8,6 +8,37 @@
     </head>
 
     <body>
+        <script>
+            var text = ["For the future of humans", "For the sake of privacy"];
+            var speed = 165;
+            var delay = 2000;
+
+            var letter = 0;
+            var iteration = 0;
+
+            function consoleType() {
+                if (iteration > text.length - 1) { 
+                    iteration = 0;
+                }
+
+                if (letter <= text[iteration].length) {
+                    document.getElementById("console-text").innerHTML += text[iteration].charAt(letter);
+                    letter++;
+                    setTimeout(consoleType, speed);
+                }
+
+                if (letter > text[iteration].length) {
+                    letter = 0;
+                    iteration += 1;
+                    document.getElementById("console-text").innerHTML = "";
+                }
+            }
+
+            window.onload = () => {
+                consoleType();
+            }
+        </script>
+
         <header>
             <nav>
                 <a id="logo-link" href="#">
@@ -25,10 +56,14 @@
             </nav>
         </header>
 
-
+        <div id="body">
+           <div id="console">
+                <span class="center-vertical"><span id="console-text"></span>_</span>
+           </div>
+        </div>
 
         <footer>
-
+            <a href="#top">Back To Top</a>
         </footer>
     </body>
 
